@@ -24,136 +24,41 @@
     %meta{ :name => "viewport", :content => "width=device-width,initial-scale=1" }
     %meta{ :charset => "UTF-8" }
     %script{:src => "js/jquery-latest.min.js"}
-    %script{:src => "js/slider.js"}
-    %script{:src => "js/svg-injector.js"}
-    %script{:src => "js/modal.js"}
-    %link{:href => "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,300", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/interaction.js"}
 
-  %body#body.intro
-    .background-fixer
-
-      // DRAWER MENU
-      .menu-background
-      %section.navigation-content
-        %nav
-          %ul
-            %li
-              %a.modal-trigger{"data-trigger" => "#curriculum", :href => "#curriculum"}
-                CURRICULUM
-                %img{:src => "img/open-arrow.svg", :alt => "open section curriculumn", :width => "19", :height => "14"}/
-            %li
-              %a.section-trigger{:href => "https://dribbble.com/joaquinlluis"}
-                DRIBBBLE
-                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
-            %li
-              %a{:href => "https://behance.com/joaquinlluis"}
-                BEHANCE
-                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
-            %li
-              %a{:href => "https://medium.com/@joaquin.lluis"}
-                MEDIUM
-                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
-            %li
-              %a{:href => "https://github.com/joaquinlluis"}
-                GITHUB
-                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
-
-            %li
-              %a{:href => "https://instagram.com/joaquinlluis"}
-                INSTAGRAM
-                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
-        %span
-          © All rights reserved.
-
-      // HEADER
-      %header.loading1.loading2
-        .loader
-          .logo.fadein
-            .desktop
-              Joaquín Lluis Montiel
-            .mobile
-              JLM
-
-      // DRAWER TRIGGER
-      %a.menu-trigger
-        %span
-        %span
-        %span
-
-      // MENU
-      .section-menu
-        .next
-        .prev
-        %nav
-          %ul.flex
-            %li.active
-              %a{:href => "#"} Intro
-            %li
-              %a{:href => "#"} UI Design
-            %li
-              %a{:href => "#"} UX Design
-            %li
-              %a{:href => "#"} Illustration
-            %li
-              %a{:href => "#"} Teaching
-            %li
-              %a{:href => "#"} Frontend
-            %li
-              %a{:href => "#"} Music
-
-      // MODAL CURRICULUM
-      .modal.curriculum#curriculum
-        .container
-          %a.close-button{"data-trigger" => "#curriculum", :href => "#"}
-          %h2
-            Do you want to
-            %br/
-            see more?
-          .flex
-            .description
-              %p
-                Oh! Thanks! Thats flattering,  here you can download my curriculum
-              %a{:href => "JOAQUINLLUIS-CV.pdf", :type => "download"}
-                %button
-                  DOWNLOAD CV
-
-      // MODAL WORKS
-      .modal#project1-modal
-        .container
-          %a.close-button{"data-trigger" => "#project1-modal", :href => "#"}
-          %h2
-            Here is the title for the
-            %br/
-            Project #1
-          .flex
-            .description
-              %img{:src => "img/description_icon.svg", :alt => ""}/
-              We have been busy making some updates to the PhotoKeeper desktop designs! This is part of the "save new album" flow where the user can name the album and select what photos to include.
-            .tags
-              %p Tags
-              .tag Branding
-              .tag App
-          .project-images
-            %img{:src => "img/portfolio/proj1/anden1.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden2.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden3.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden4.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden5.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden6.png", :alt => ""}/
-            %img{:src => "img/portfolio/proj1/anden7.png", :alt => ""}/
-
-      .modal#project2-modal
-        .container
-          %a.close-button{"data-trigger" => "#project2-modal", :href => "#"}
-          %h2
-            Coming soon
-
-      .modal#project3-modal
-        .container
-          %a.close-button{"data-trigger" => "#project3-modal", :href => "#"}
-          %h2
-            Coming soon
-
-      // MAIN CONTENT
-      .main-wrapper
-        
+  %body
+    .filters-container
+      .ui-dropdown
+        %button.dd-button
+          %span.dd-button__text
+            Todos los estados
+        .ui-dropdown__content
+          .ui-list.ui-dropdown__options-list
+            .ui-list__group
+              %span.ui-list__group-title
+                Operaciones
+              %ul.ui-list__content
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Cobros
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Solicitudes de dinero
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Retiros de dinero
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Pagos
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Ingresos de dinero
+                %li.selectbox-option
+                  %a.ui-list__item-option
+                    %span.ui-list__item-text
+                      Todas

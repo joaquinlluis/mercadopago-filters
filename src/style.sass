@@ -3,3 +3,48 @@
 @import "partials/variables.sass"
 @import "partials/_misc.sass"
 
+.ui-list
+  width: 100%
+  overflow: hidden
+  font-size: inherit
+
+.ui-dropdown__content
+  position: absolute
+  top: -.5625em
+  left: -1em
+  z-index: 20
+  min-width: 7.5em
+  max-height: 18.5em
+  overflow: auto
+  background: #fff
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
+  -webkit-border-radius: .25em
+  border-radius: .25em
+
+.ui-list__group+.ui-list__group
+  margin-top: 2em
+
+.ui-list__group-title
+  display: block
+  padding: 1em 1em .5em
+  color: #ccc
+  font-size: .875em
+  background: #fff
+
+.ui-list__item
+  line-height: 3.25em
+  border-bottom: .0625em solid #eee
+  text-align: initial
+
+.ui-list__item-option
+  display: block
+  padding: 0 1em
+  color: #333
+  background: #fff
+  -webkit-transition: background .18s ease,border .18s ease
+  transition: background .18s ease,border .18s ease
+  white-space: nowrap
+
+.ui-list__item-text
+  font-size: .875em
