@@ -1,0 +1,159 @@
+!!! 5
+%html
+  %head
+    %title Joaquín Lluis - Website
+    %link{:href => "style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "favicon/apple-icon-57x57.png", :rel => "apple-touch-icon", :sizes => "57x57"}/
+    %link{:href => "favicon/apple-icon-60x60.png", :rel => "apple-touch-icon", :sizes => "60x60"}/
+    %link{:href => "favicon/apple-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "favicon/apple-icon-76x76.png", :rel => "apple-touch-icon", :sizes => "76x76"}/
+    %link{:href => "favicon/apple-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    %link{:href => "favicon/apple-icon-120x120.png", :rel => "apple-touch-icon", :sizes => "120x120"}/
+    %link{:href => "favicon/apple-icon-144x144.png", :rel => "apple-touch-icon", :sizes => "144x144"}/
+    %link{:href => "favicon/apple-icon-152x152.png", :rel => "apple-touch-icon", :sizes => "152x152"}/
+    %link{:href => "favicon/apple-icon-180x180.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "favicon/android-icon-192x192.png", :rel => "icon", :sizes => "192x192", :type => "image/png"}/
+    %link{:href => "favicon/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "favicon/favicon-96x96.png", :rel => "icon", :sizes => "96x96", :type => "image/png"}/
+    %link{:href => "favicon/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "favicon/manifest.json", :rel => "manifest"}/
+    %meta{:content => "#ffffff", :name => "msapplication-TileColor"}/
+    %meta{:content => "favicon/ms-icon-144x144.png", :name => "msapplication-TileImage"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
+    %meta{ :http_equiv => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :name => "viewport", :content => "width=device-width,initial-scale=1" }
+    %meta{ :charset => "UTF-8" }
+    %script{:src => "js/jquery-latest.min.js"}
+    %script{:src => "js/slider.js"}
+    %script{:src => "js/svg-injector.js"}
+    %script{:src => "js/modal.js"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,300", :rel => "stylesheet", :type => "text/css"}/
+
+  %body#body.intro
+    .background-fixer
+
+      // DRAWER MENU
+      .menu-background
+      %section.navigation-content
+        %nav
+          %ul
+            %li
+              %a.modal-trigger{"data-trigger" => "#curriculum", :href => "#curriculum"}
+                CURRICULUM
+                %img{:src => "img/open-arrow.svg", :alt => "open section curriculumn", :width => "19", :height => "14"}/
+            %li
+              %a.section-trigger{:href => "https://dribbble.com/joaquinlluis"}
+                DRIBBBLE
+                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
+            %li
+              %a{:href => "https://behance.com/joaquinlluis"}
+                BEHANCE
+                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
+            %li
+              %a{:href => "https://medium.com/@joaquin.lluis"}
+                MEDIUM
+                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
+            %li
+              %a{:href => "https://github.com/joaquinlluis"}
+                GITHUB
+                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
+
+            %li
+              %a{:href => "https://instagram.com/joaquinlluis"}
+                INSTAGRAM
+                %img{:src => "img/ext-link.svg", :alt => "external link", :width => "25", :height => "9"}/
+        %span
+          © All rights reserved.
+
+      // HEADER
+      %header.loading1.loading2
+        .loader
+          .logo.fadein
+            .desktop
+              Joaquín Lluis Montiel
+            .mobile
+              JLM
+
+      // DRAWER TRIGGER
+      %a.menu-trigger
+        %span
+        %span
+        %span
+
+      // MENU
+      .section-menu
+        .next
+        .prev
+        %nav
+          %ul.flex
+            %li.active
+              %a{:href => "#"} Intro
+            %li
+              %a{:href => "#"} UI Design
+            %li
+              %a{:href => "#"} UX Design
+            %li
+              %a{:href => "#"} Illustration
+            %li
+              %a{:href => "#"} Teaching
+            %li
+              %a{:href => "#"} Frontend
+            %li
+              %a{:href => "#"} Music
+
+      // MODAL CURRICULUM
+      .modal.curriculum#curriculum
+        .container
+          %a.close-button{"data-trigger" => "#curriculum", :href => "#"}
+          %h2
+            Do you want to
+            %br/
+            see more?
+          .flex
+            .description
+              %p
+                Oh! Thanks! Thats flattering,  here you can download my curriculum
+              %a{:href => "JOAQUINLLUIS-CV.pdf", :type => "download"}
+                %button
+                  DOWNLOAD CV
+
+      // MODAL WORKS
+      .modal#project1-modal
+        .container
+          %a.close-button{"data-trigger" => "#project1-modal", :href => "#"}
+          %h2
+            Here is the title for the
+            %br/
+            Project #1
+          .flex
+            .description
+              %img{:src => "img/description_icon.svg", :alt => ""}/
+              We have been busy making some updates to the PhotoKeeper desktop designs! This is part of the "save new album" flow where the user can name the album and select what photos to include.
+            .tags
+              %p Tags
+              .tag Branding
+              .tag App
+          .project-images
+            %img{:src => "img/portfolio/proj1/anden1.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden2.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden3.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden4.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden5.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden6.png", :alt => ""}/
+            %img{:src => "img/portfolio/proj1/anden7.png", :alt => ""}/
+
+      .modal#project2-modal
+        .container
+          %a.close-button{"data-trigger" => "#project2-modal", :href => "#"}
+          %h2
+            Coming soon
+
+      .modal#project3-modal
+        .container
+          %a.close-button{"data-trigger" => "#project3-modal", :href => "#"}
+          %h2
+            Coming soon
+
+      // MAIN CONTENT
+      .main-wrapper
+        
