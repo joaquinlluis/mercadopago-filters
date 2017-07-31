@@ -3,12 +3,37 @@
 @import "partials/variables.sass"
 @import "partials/_misc.sass"
 
+body
+  display: flex
+  min-height: 100vh
+
+.filters-container
+  width: 100%
+  max-width: 600px
+  padding: 50px 50px
+  background: #fff
+  margin: auto
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
+  -webkit-border-radius: .25em
+  border-radius: .25em
+
+// DROPDOWN
+
+.ui-dropdown
+  position: relative
+  display: inline-block
+  vertical-align: middle
+
+// DROPDOWN LIST
+
 .ui-list
   width: 100%
   overflow: hidden
   font-size: inherit
 
 .ui-dropdown__content
+  display: none
   position: absolute
   top: -.5625em
   left: -1em
@@ -22,7 +47,7 @@
   -webkit-border-radius: .25em
   border-radius: .25em
 
-.ui-list__group+.ui-list__group
+.ui-list__group
   margin-top: 2em
 
 .ui-list__group-title
@@ -45,6 +70,37 @@
   -webkit-transition: background .18s ease,border .18s ease
   transition: background .18s ease,border .18s ease
   white-space: nowrap
+  &:focus,
+  &:hover
+    background: #f7f7f7
+    color: #009ee3
 
 .ui-list__item-text
+  font-size: .875em
+
+
+// DROPDOWN BUTTON
+
+.dd-button
+  padding: 0
+  border: 0
+  background: none
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  height: 2.125em
+  padding-bottom: .125em
+  font-family: Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif
+  font-size: 16px
+  line-height: 2.125em
+  color: #999
+  border-bottom: .0625em solid #ddd
+  cursor: pointer
+.dd-button__text
+  display: block
   font-size: .875em
