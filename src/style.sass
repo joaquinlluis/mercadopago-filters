@@ -1,6 +1,5 @@
 // IMPORTS
 
-@import "partials/variables.sass"
 @import "partials/_misc.sass"
 
 body
@@ -37,6 +36,7 @@ body
   position: absolute
   top: -.5625em
   left: -1em
+  padding: 4px 0
   z-index: 20
   min-width: 7.5em
   max-height: 18.5em
@@ -47,9 +47,6 @@ body
   -webkit-border-radius: .25em
   border-radius: .25em
 
-.ui-list__group
-  margin-top: 2em
-
 .ui-list__group-title
   display: block
   padding: 1em 1em .5em
@@ -58,8 +55,7 @@ body
   background: #fff
 
 .ui-list__item
-  line-height: 3.25em
-  border-bottom: .0625em solid #eee
+  line-height: 28px
   text-align: initial
 
 .ui-list__item-option
@@ -76,7 +72,7 @@ body
     color: #009ee3
 
 .ui-list__item-text
-  font-size: .875em
+  font-size: 14px
 
 
 // DROPDOWN BUTTON
@@ -96,11 +92,10 @@ body
   height: 2.125em
   padding-bottom: .125em
   font-family: Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif
-  font-size: 16px
+  font-size: 14px
   line-height: 2.125em
   color: #999
   border-bottom: .0625em solid #ddd
   cursor: pointer
 .dd-button__text
   display: block
-  font-size: .875em
