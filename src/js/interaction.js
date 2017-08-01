@@ -1,12 +1,14 @@
 $(document).ready(function(){
 
   $('.dd-button').click(function( event){
-    event.stopPropagation();
-    $('.ui-dropdown__content').fadeIn('300ms', 'swing');
+    sectionId = $(this).data('trigger');
+    $('.ui-dropdown__content').removeClass('active');
+    $(sectionId).toggleClass('active');
   });
 
-  $('body').click(function( event){
-    event.stopPropagation();
-    $('.ui-dropdown__content').fadeOut('300ms', 'swing');
-  });
+  // $('body').click(function( event){
+  //   event.stopPropagation();
+  //   $('.ui-dropdown__content').fadeOut('300ms', 'swing');
+  // });
+
 });

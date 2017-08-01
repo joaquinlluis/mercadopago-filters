@@ -27,45 +27,221 @@
     %script{:src => "js/interaction.js"}
 
   %body
-    .filters-container
-      .ui-dropdown
-        %button.dd-button
-          %span.dd-button__text
-            Todos los estados
-            
-        .ui-dropdown__content
-          .ui-list.ui-dropdown__options-list
-            .ui-list__group
+    .filters-bar
+      .filters-bar__dd-container
 
-              %span.ui-list__group-title
+        .filters-bar__col
+          .ui-dropdown
+            %button.dd-button{"data-trigger" => "#operaciones"}
+              %span.dd-button__text
                 Operaciones
 
-              %ul.ui-list__content
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Cobros
+            .ui-dropdown__content#operaciones
+              .ui-list.ui-dropdown__options-list
+                .ui-list__group
+                  %span.ui-list__group-title
+                    Operaciones
 
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Solicitudes de dinero
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Retiros de dinero
+                  %ul.ui-list__content
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Cobros
 
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Pagos
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Solicitudes de dinero
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Retiros de dinero
 
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Ingresos de dinero
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Pagos
 
-                %li.ui-list__item
-                  %a.ui-list__item-option
-                    %span.ui-list__item-text
-                      Todas
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Ingresos de dinero
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Todas
+
+        .filters-bar__col
+          .ui-dropdown
+            %button.dd-button.selected{"data-trigger" => "#estados"}
+              %span.dd-button__text
+                Estados
+
+            .ui-dropdown__content#estados
+              .ui-list.ui-dropdown__options-list
+                .ui-list__group
+                  %span.ui-list__group-title
+                    Estados
+
+                  %ul.ui-list__content
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Acreditados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Pendientes
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          En proceso
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Rechazados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Cancelados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Devueltos
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Con contracargos
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Con reclamos
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Todos
+
+        .filters-bar__col
+          .ui-dropdown
+            %button.dd-button{"data-trigger" => "#envios"}
+              %span.dd-button__text
+                Envíos
+
+            .ui-dropdown__content#envios
+              .ui-list.ui-dropdown__options-list
+                .ui-list__group
+                  %span.ui-list__group-title
+                    Mercado Envíos
+
+                  %ul.ui-list__content
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Etiqueta lista para imprimir
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          En preparación
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          En camino
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Entregados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          No entregados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Todos
+
+                .ui-list__group.second
+                  %span.ui-list__group-title
+                    Mercado Envíos
+
+                  %ul.ui-list__content
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Etiqueta lista para imprimir
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          En preparación
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          En camino
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Entregados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          No entregados
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Todos
+
+        .filters-bar__col
+          .ui-dropdown
+            %button.dd-button{"data-trigger" => "#canales"}
+              %span.dd-button__text
+                Canales de venta
+            .ui-dropdown__content#canales
+              .ui-list.ui-dropdown__options-list
+                .ui-list__group
+                  %span.ui-list__group-title
+                    Canales de venta
+
+                  %ul.ui-list__content
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Cobros
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Solicitudes de dinero
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Retiros de dinero
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Pagos
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Ingresos de dinero
+
+                    %li.ui-list__item
+                      %a.ui-list__item-option
+                        %span.ui-list__item-text
+                          Todas
