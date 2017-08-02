@@ -32,141 +32,182 @@
 
         .filters-bar__col
           .ui-dropdown
-            %button.dd-button{"data-trigger" => "#operaciones"}
-              %span.dd-button__text
+            %button.dd-button
+              %span.dd-button__text#operaciones
                 Operaciones
 
-            .ui-dropdown__content#operaciones
+            .ui-dropdown__content
               .ui-list.ui-dropdown__options-list
                 .ui-list__group
                   %span.ui-list__group-title
                     Operaciones
 
                   %ul.ui-list__content
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Cobros
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Solicitudes de dinero
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Retiros de dinero
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Pagos
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Ingresos de dinero
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#operaciones"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Todas
 
         .filters-bar__col
           .ui-dropdown
-            %button.dd-button.selected{"data-trigger" => "#estados"}
-              %span.dd-button__text
+            %button.dd-button
+              %span.dd-button__text#estados
                 Estados
 
-            .ui-dropdown__content#estados
+            .ui-dropdown__content
               .ui-list.ui-dropdown__options-list
                 .ui-list__group
                   %span.ui-list__group-title
                     Estados
 
                   %ul.ui-list__content
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Acreditados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Pendientes
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           En proceso
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Rechazados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Cancelados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Devueltos
 
-                    %li.ui-list__item
+                    %li.ui-list__item__more-options
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Con contracargos
+                      .ui-dropdown__content__indented-options
+                        %ul.ui-list__content__indented-options
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                En proceso
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Cerrados
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Todos
 
-                    %li.ui-list__item
+                    %li.ui-list__item__more-options
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Con reclamos
+                      .ui-dropdown__content__indented-options
+                        %ul.ui-list__content__indented-options
 
-                    %li.ui-list__item
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Por responder
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Esperando respuesta
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                En mediación por responder
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                En mediación esperando respuesta
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Resueltos
+                          %li.ui-list__item{"data-trigger" => "#estados"}
+                            %a.ui-list__item-option
+                              %span.ui-list__item-text
+                                Todos
+
+                    %li.ui-list__item{"data-trigger" => "#estados"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
-                          Todos
+                          Todos los estados
 
         .filters-bar__col
           .ui-dropdown
-            %button.dd-button{"data-trigger" => "#envios"}
-              %span.dd-button__text
+            %button.dd-button
+              %span.dd-button__text#envios
                 Envíos
 
-            .ui-dropdown__content#envios
+            .ui-dropdown__content
               .ui-list.ui-dropdown__options-list
                 .ui-list__group
                   %span.ui-list__group-title
                     Mercado Envíos
 
                   %ul.ui-list__content
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Etiqueta lista para imprimir
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           En preparación
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           En camino
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Entregados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           No entregados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Todos
@@ -176,39 +217,39 @@
                     Mercado Envíos
 
                   %ul.ui-list__content
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Etiqueta lista para imprimir
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           En preparación
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           En camino
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Entregados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           No entregados
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#envios"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Todos
 
         .filters-bar__col
           .ui-dropdown
-            %button.dd-button{"data-trigger" => "#canales"}
-              %span.dd-button__text
+            %button.dd-button
+              %span.dd-button__text#canales
                 Canales de venta
             .ui-dropdown__content#canales
               .ui-list.ui-dropdown__options-list
@@ -217,31 +258,31 @@
                     Canales de venta
 
                   %ul.ui-list__content
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Cobros
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Solicitudes de dinero
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Retiros de dinero
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Pagos
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Ingresos de dinero
 
-                    %li.ui-list__item
+                    %li.ui-list__item{"data-trigger" => "#canales"}
                       %a.ui-list__item-option
                         %span.ui-list__item-text
                           Todas

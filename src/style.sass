@@ -23,8 +23,6 @@ body
   vertical-align: middle
 
 .filters-bar
-  width: 100%
-  max-width: 600px
   margin: 50px auto auto auto
   position: relative
   z-index: 1
@@ -48,26 +46,31 @@ body
 
 .ui-list
   width: 100%
-  overflow: hidden
+  //overflow: hidden
   font-size: inherit
 
-.ui-dropdown__content
+.ui-dropdown__content,
+.ui-dropdown__content__indented-options
   display: none
   position: absolute
   top: -4px
   left: 0
   padding: 4px 0
   z-index: 20
-  min-width: 7.5em
-  overflow: auto
+  min-width: 212px
+  //overflow: auto
   background: #fff
   -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.3)
   -webkit-border-radius: .25em
   border-radius: .25em
-  animation: dropdownactive .5s
+  animation: dropdownactive .2s
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
   &.active
     display: block
+
+.ui-dropdown__content__indented-options
+  left: 99%
 
 .ui-list__group.second
   margin-top: 0.5em
@@ -82,9 +85,30 @@ body
   font-size: .875em
   background: #fff
 
-.ui-list__item
+.ui-list__item,
+.ui-list__item__more-options
   line-height: 28px
   text-align: initial
+  position: relative
+
+.ui-list__item__more-options
+  &:after
+    content: ''
+    width: 6px
+    height: 6px
+    position: absolute
+    top: 11px
+    right: 12px
+    border-top: 1px solid #666
+    border-right: 1px solid #666
+    transform: rotate(45deg)
+    -webkit-transition: .18s ease
+    transition: .18s ease
+
+  &:hover .ui-dropdown__content__indented-options
+    display: block
+  &:hover:after
+    right: 11px
 
 .ui-list__item-option
   display: block
@@ -98,6 +122,13 @@ body
   &:hover
     background: #f7f7f7
     color: #009ee3
+
+.ui-list__item.selected .ui-list__item-option
+  font-weight: 600
+  color: #009ee3
+  background: #E6F5FC
+  box-shadow: inset 2px 0px 0px 0px #009ee3
+
 
 .ui-list__item-text
   font-size: 14px
