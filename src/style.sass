@@ -14,6 +14,31 @@ body
     opacity: 1
     top: -4px
 
+.mp-app-wrapper
+  min-height: 100vh
+  width: 100%
+  background: #f7f7f7
+
+.mp-nav
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 16em
+  height: 100%
+  min-height: 100vh
+  background: #eee
+  overflow: hidden
+  z-index: 80
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.mp-main
+  display: block
+  width: 100%
+  padding-left: 16em
+  padding-top: 4em
 
 // DROPDOWN
 
@@ -22,8 +47,11 @@ body
   display: inline-block
   vertical-align: middle
 
+.filters-bar-wrapper
+  max-width: 65.25em
+  padding: 1.5em 2em
+  margin: 0 auto
 .filters-bar
-  margin: 50px auto auto auto
   position: relative
   z-index: 1
   display: flex
