@@ -12,6 +12,16 @@ $(document).ready(function(){
     $('.ui-dropdown__content', this).addClass('active');
   });
 
+  $('.filters-toggle').click(function(){
+    $('.filters-toggle').toggleClass('is-open');
+    $('.filters-bar').fadeToggle();
+    $('.filters-toggle__text').toggle();
+  });
+
+  $('.activity-row-toggle__button').click(function(){
+    $('.activity-row-toggle__icon').toggleClass('active');
+  });
+
   $('.ui-list__item').click(function( event){
 
     event.stopPropagation();

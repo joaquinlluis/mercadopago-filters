@@ -1,10 +1,77 @@
-// IMPORTS
+// MISC STYLES
 
-@import "partials/_misc.sass"
+html, *
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+  text-decoration: none
+  -ms-overflow-style: none
+  overflow: -moz-scrollbars-none
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+  font-family: 'Proxima Nova', sans-serif
+  color: inherit
+
+a
+  cursor: pointer
+  color: #009ee3
+
+::selection,
+::-moz-selection
+  background: #fff
+  color: #000
+::-webkit-scrollbar
+  width: 0 !important
 
 body
+  font-family: 'Proxima Nova', sans-serif
+  font-size: 16px
+  padding: 30px
+  font-weight: 400
+  color: #666
+  background: rgb(115,199,236)
+  background: -moz-linear-gradient(top, rgba(115,199,236,1) 0%, rgba(168,214,234,1) 100%)
+  background: -webkit-linear-gradient(top, rgba(115,199,236,1) 0%,rgba(168,214,234,1) 100%)
+  background: linear-gradient(to bottom, rgba(115,199,236,1) 0%,rgba(168,214,234,1) 100%)
   display: flex
   min-height: 100vh
+
+button
+  padding: 0
+  font-family: inherit
+  font-size: inherit
+  background: none
+  border: 0
+  &:focus
+    outline: none
+
+.wrapper  
+  width: 100%
+  max-width: 980px
+  margin: 0 auto
+.wrapper-wrapper
+  width: 100%
+  padding: 20px
+  background: #f7f7f7
+  border-radius: 4px
+  box-shadow: 0 2px 30px 0 rgba(0,0,0,.2)
+  
+h1
+  font-size: 24px
+  font-weight: 600
+  margin: 0
+  margin-bottom: 5px
+  color: #fff
+p
+  font-size: 15px
+  font-weight: 600
+  margin: 0
+  margin-bottom: 20px
+  color: #fff
+  opacity: 0.8
 
 @keyframes dropdownactive
   from
@@ -14,31 +81,14 @@ body
     opacity: 1
     top: -4px
 
-.mp-app-wrapper
-  min-height: 100vh
-  width: 100%
-  background: #f7f7f7
+@keyframes filters_active
+  from
+    opacity: .9
+    transform: translateY(-10px)
+  to
+    opacity: 1
+    transform: translateY(0)
 
-.mp-nav
-  position: fixed
-  top: 0
-  bottom: 0
-  width: 16em
-  height: 100%
-  min-height: 100vh
-  background: #eee
-  overflow: hidden
-  z-index: 80
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
-
-.mp-main
-  display: block
-  width: 100%
-  padding-left: 16em
-  padding-top: 4em
 
 // DROPDOWN
 
@@ -47,18 +97,19 @@ body
   display: inline-block
   vertical-align: middle
 
-.filters-bar-wrapper
-  max-width: 65.25em
-  padding: 1.5em 2em
-  margin: 0 auto
 .filters-bar
+  margin: 0 auto auto auto
   position: relative
   z-index: 1
   display: flex
-  padding: .75em 1em
+  padding: .75em 1.5em .75em 1em
   background: #fff
   box-shadow: 0 0.07em 0.125em 0 rgba(0,0,0,.15)
-  border-radius: 4px
+  border-radius: 4px 4px 0 0
+  display: flex
+  animation: filters_active .2s
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  animation-fill-mode: forwards
 
 .filters-bar__dd-container
   display: flex
@@ -69,6 +120,12 @@ body
   -ms-flex-negative: 0
   flex-shrink: 0
   margin-right: 1.5em
+  display: flex
+  &:last-child
+    margin: 0
+
+.filters-bar__col--lg
+  flex-grow: 1
 
 // DROPDOWN LIST
 
@@ -96,6 +153,10 @@ body
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
   &.active
     display: block
+
+.time-period .ui-dropdown__content
+  left: inherit
+  right: 0
 
 .ui-dropdown__content__indented-options
   left: 99%
@@ -234,4 +295,151 @@ body
     transition: .18s ease
   &:focus
     outline: none
+
+// FILTERS LAYOUT
+
+.filters-bar__reset-btn
+  color: #009ee3
+  font-size: .875em
+  cursor: pointer
+
+.filters-bar__reset-btn[disabled]
+  color: #999
+  cursor: default
+
+// FILTERS CONTROLS
+
+.activities-controls
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  margin-bottom: .75em
+
+.u-clearfix:after, .u-clearfix:before
+  display: table
+  content: ""
+
+.activities-controls__col
+  flex: 1
+  display: flex
+  
+.activities-controls__col--margin-right
+  margin-right: 1em
+  flex: 2
+
+.search
+  position: relative
+  display: inline-block
+  min-width: 320px
+  z-index: 50
+  background: none
+  will-change: width
+  -webkit-transition: width .3s ease-out
+  transition: width .3s ease-out
+
+.search__input-wrapper
+  position: relative
+  -webkit-flex-shrink: 0
+  -ms-flex-negative: 0
+  flex-shrink: 0
+  width: 100%
+  height: auto
+
+.search__input
+  width: 100%
+  height: 3.7142857143em
+  padding-left: 3.5571428571em
+  font-size: .875em
+  -webkit-border-radius: .25em
+  border-radius: .25em
+  border: .0625em solid #ddd
+  display: inline-block
+
+.search__input-icon, .search__input-tooltip-icon
+  position: absolute
+  top: 0
+  left: 1.5625em
+  z-index: 10
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  height: 100%
+
+.filters-toggle
+  padding: 0 12px
+  margin-left: 8px
+  line-height: 3.1em
+  -webkit-border-radius: .25em
+  border-radius: .25em
+  border: .0625em solid transparent
+  color: #666666
+  cursor: pointer
+  -webkit-transition: background .18s ease,color .18s ease
+  transition: background .18s ease,color .18s ease
+  &:hover
+    background: #eee
+  &:focus
+    border-color: #ddd
+    outline: none
+
+.filters-toggle__text
+  font-size: .875em
+
+.filters-toggle.is-open
+  background: #d7e6ef
+  color: #009ee3
+  border-color: transparent
+
+.activity-row-toggle
+  width: 36px
+  height: 36px
+
+.activity-row-toggle__button
+  width: 36px
+  height: 36px
+  border-radius: 50%
+  cursor: pointer
+  transition: .18s ease
+  &:hover
+    background: #ccc
+
+.activity-row-toggle__icon
+  display: none
+  &.active
+    display: block
+
+.time-period
+  margin-left: auto
+  margin-top: 5px
+  margin-right: 5px
+
+// SEARCH RESULTS
+.activity-list__head
+  padding: 0 1.5em
+  background: #fafafa
+  -webkit-border-radius: .25em .25em 0 0
+  border-radius: .25em .25em 0 0
+  line-height: 3.5714285714
+  font-size: .875em
+  color: #999
+  display: flex
+  box-shadow: 0 0.07em 0.125em 0 rgba(0,0,0,.15)
+.activity-list__title
+  float: none
+  clear: none
+.activity-list__head-link
+  margin-left: auto
+
+
+
 
