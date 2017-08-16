@@ -1,6 +1,6 @@
 // MISC STYLES
 
-html, *
+html, *, input
   margin: 0
   padding: 0
   box-sizing: border-box
@@ -105,6 +105,144 @@ p
     transform: translateY(0)
 
 
+// POINT OF INTEREST
+
+.poi
+  position: absolute
+  right: -8px
+  top: 50%
+  transform: translateY(-50%)
+  width: 16px
+  height: 16px
+  border: 2.5px solid #fff
+  background: #009ee3
+  border-radius: 50%
+  backface-visibility: hidden
+  z-index: 1
+  &:before,
+  &:after
+    content: ""
+    display: block
+    width: 50px
+    height: 50px
+    position: absolute
+    top: -21px
+    left: -21px
+    background: rgba(70,172,243,.5)
+    border: 1px solid #46acf3
+    border-radius: 50%
+    z-index: -1
+    animation: poi-animation 1.7s infinite ease-out
+  &:after
+    animation: poi-animation-inner 1.7s infinite ease-out
+
+
+// POI ANIMATION
+
+@keyframes poi-animation
+  0%
+    opacity: .65
+    transform: scale(.1)
+  100%
+    opacity: 0
+    transform: scale(1)
+
+@keyframes poi-animation-inner
+  0%
+    opacity: 0
+    transform: scale(.1)
+
+  24%,90%
+    opacity: 0
+
+  25%
+    opacity: .65
+    transform: scale(.1)
+
+  100%
+    opacity: 0
+    transform: scale(1)
+
+// TOOLTIP
+.tooltip
+  position: absolute
+  top: -1px
+  left: 100%
+  margin-left: 16px
+  width: 300px
+  height: 200px
+  background: #fff
+  border-radius: 4px
+  z-index: 1
+  box-shadow: 0 0.07em 0.125em 0 rgba(0,0,0,.15)
+
+.tooltip__container
+  position: absolute
+  top: -1px
+  left: 100%
+  margin-left: 22px
+  min-width: 18em
+  padding: 1.5em
+  padding-top: 1.375em
+  z-index: 50
+  background-color: #f4fbff
+  -webkit-border-radius: .25em
+  border-radius: .25em
+  -webkit-box-shadow: 0 0.07em 0.125em 0 rgba(0,0,0,.15)
+  box-shadow: 0 0.07em 0.125em 0 rgba(0,0,0,.15)
+  z-index: 1
+.tooltip__container.rc-tooltip-placement-rightTop .rc-tooltip-arrow
+  left: -.5em
+  top: 1.1em
+  margin-top: 0
+  border-width: .5em .5em .5em 0
+  border-right-color: #999
+.tooltip__container .rc-tooltip-arrow, .tooltip__container .rc-tooltip-arrow-inner
+  position: absolute
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+.tooltip__body .tooltip__title
+  margin-bottom: .5em
+.tooltip__container.rc-tooltip-placement-rightTop .rc-tooltip-arrow-inner
+  margin-top: -.5625em
+  border-width: .5625em .5625em .5625em 0
+  border-right-color: #f4fbff
+.tooltip__container .rc-tooltip-arrow, .tooltip__container .rc-tooltip-arrow-inner
+  position: absolute
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+
+.cross-selling__btn svg
+  position: absolute
+  top: 0
+  right: 0
+
+.tooltip__body
+  p, h4
+    color: #666
+    line-height: 1.4em
+    font-weight: 400
+    text-align: left
+    &:first-child
+      margin-bottom: .5em
+  p
+    font-size: .875em
+  h4
+    color: #333
+.tooltip__body
+  margin-bottom: 0px
+.cross-selling__btn
+  width: 12px
+  height: 12px
+  position: absolute
+  top: 16px
+  right: 16px
+
+
 // DROPDOWN
 
 .ui-dropdown
@@ -134,7 +272,7 @@ p
   -webkit-flex-shrink: 0
   -ms-flex-negative: 0
   flex-shrink: 0
-  margin-right: 1.5em
+  margin-right: 1em
   display: flex
   &:last-child
     margin: 0
@@ -394,29 +532,44 @@ p
   height: 100%
 
 .filters-toggle
-  padding: 0 12px
-  margin-left: 8px
+  padding: 0 24px
+  margin-left: 16px
   line-height: 3.1em
   -webkit-border-radius: .25em
   border-radius: .25em
   border: .0625em solid transparent
+  background: #eee
   color: #666666
   cursor: pointer
   -webkit-transition: background .18s ease,color .18s ease
   transition: background .18s ease,color .18s ease
+  flex-shrink: 0
+  position: relative
+  z-index: 1
+
   &:hover
-    background: #eee
+    background: #f2f2f2
   &:focus
     border-color: #ddd
     outline: none
+.filters-toggle__text
+  svg
+    margin-bottom: -4px
+    margin-right: 8px
 
 .filters-toggle__text
   font-size: .875em
 
-.filters-toggle.is-open
+.filters-toggle.is-open,
+.filters-toggle.active
   background: #d7e6ef
   color: #009ee3
   border-color: transparent
+  svg g path
+    stroke: #009ee3
+  &:hover
+    svg g path
+      stroke: #009ee3
 
 .activity-row-toggle
   width: 36px

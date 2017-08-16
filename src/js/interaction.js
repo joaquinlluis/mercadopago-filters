@@ -14,8 +14,14 @@ $(document).ready(function(){
 
   $('.filters-toggle').click(function(){
     $('.filters-toggle').toggleClass('is-open');
+    $('.filters-toggle').removeClass('active');
     $('.filters-bar').fadeToggle();
-    $('.filters-toggle__text').toggle();
+    $('.poi').fadeOut('slow');
+    $('.rc-tooltip').fadeOut();
+    //$('.filters-toggle__text').toggle();
+  });
+  $('.rc-tooltip').click(function(){
+    $('.rc-tooltip').fadeOut('slow');
   });
 
   $('.activity-row-toggle__button').click(function(){
